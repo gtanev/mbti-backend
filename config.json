@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "1234",
+    "database": "mbti_test",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
