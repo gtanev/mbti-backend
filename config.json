@@ -4,6 +4,7 @@
     "password": "1234",
     "database": "mbti_test",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false
   }
 }
