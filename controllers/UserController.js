@@ -14,7 +14,6 @@ export default class UserController {
       res.status(200).json({ users });
     }
     catch (error) {
-      console.debug(error);
       res.status(500).json({ error });
     }
   };
@@ -36,7 +35,6 @@ export default class UserController {
       res.status(200).json(userDetails ? userDetails : { 'message': 'User not found.' });
     }
     catch (error) {
-      console.debug(error);
       res.status(500).json({ error });
     }
   };
@@ -67,7 +65,6 @@ export default class UserController {
       res.status(200).json(body);
     }
     catch (error) {
-      console.debug({ error });
       res.status(500).json({ error });
     }
   };

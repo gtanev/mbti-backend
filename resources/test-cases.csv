@@ -1,0 +1,12 @@
+,Test Case A,Test Case B,Test Case D,Test Case E,Test Case F,Test Case G,Test Case H
+Question 1,4,1,3,3,4,1,7
+Question 2,3,5,2,4,4,1,7
+Question 3,1,4,6,7,4,1,7
+Question 4,6,6,1,1,4,1,7
+Question 5,7,5,7,2,4,1,7
+Question 6,3,2,3,5,4,1,7
+Question 7,5,6,2,4,4,1,7
+Question 8,3,3,5,3,4,1,7
+Question 9,6,3,2,2,4,1,7
+Question 10,6,2,7,6,4,1,7
+Result:,ENTP,ESTJ,INFP,ISFP,ESTJ,ISTJ,ESTP
