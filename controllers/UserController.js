@@ -9,9 +9,9 @@ export default class UserController {
       User.hasMany(UserQuestion, { foreignKey: 'userId' });
       UserQuestion.belongsTo(User, { foreignKey: 'userId' });
 
-      let usersAndAnswers = await User.findAll({ include: [UserQuestion] });
+      let users = await User.findAll({ include: [UserQuestion] });
 
-      res.status(200).json(usersAndAnswers);
+      res.status(200).json({ users });
     }
     catch (error) {
       console.debug(error);
@@ -33,8 +33,7 @@ export default class UserController {
         userDetails = await User.findOne({ where: { email: userEmail }, include: [UserQuestion] });
       }
 
-      res.status(200).json(
-          userDetails ? userDetails : { 'message': 'User not found.' });
+      res.status(200).json(userDetails ? userDetails : { 'message': 'User not found.' });
     }
     catch (error) {
       console.debug(error);
@@ -113,8 +112,7 @@ const reverseNumber = (n, min = 1, max = 7) => (min + max) - n;
 const inferMyersBriggsType = (rankings, midPoint = (minScore + maxScore) / 2) => {
   let type = '', alternatives = [];
 
-  rankings.forEach(
-      (value, key) => type += (value > midPoint) ? key.charAt(1) : key.charAt(0));
+  rankings.forEach((value, key) => type += (value > midPoint) ? key.charAt(1) : key.charAt(0));
 
   [...rankings.entries()].forEach((entry, index) => {
         if (entry[1] === midPoint) {
