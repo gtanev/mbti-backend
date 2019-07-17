@@ -5,27 +5,26 @@ version of a [Myers-Briggs Type Indicator](https://en.wikipedia.org/wiki/Myers%E
 
 The landing page displays a list of statements, each of which can be ranked 
 on a scale from 1 to 7 by selecting the corresponding radio button, from left to right, respectively. 
-A selection of 1 means that the person disagrees strongly with that statement.
-If the person ranks a 7, that means they agree strongly with that statement.
+A selection of 1 means that the user disagrees strongly with that statement.
+If the user ranks a 7, that means they agree strongly with that statement.
 A value of 4 means their answer is neutral.
 
 Once the user ranks all presented statements and provides a valid email address, 
-their answers are sent to the backend and the user is directed to their results page.
+their answers are sent to the backend and they are directed to their results page.
 The results page shows the user's Myers-Briggs type together with a simple chart indicating
 where they lean on each of the 4 [MBTI dimensions](https://en.wikibooks.org/wiki/Myers-Briggs_Type_Indicator/Dimensions).
 
-
-The backend API accepts a POST request with the user's answers and their email address and persists this data to a MySQL database. 
+The backend API accepts a POST request with the user's answers and email address and persists this data to a MySQL database. 
 The database stores all test questions (i.e. statements) and their association with the MBTI dimensions. This information is
-used to compute the test scores and infer the user's MBTI, which are subsequently passed on to the client.  
+used to compute the user's test scores and infer their Myers-Briggs type, which are subsequently passed on to the frontend.  
 
 Backend endpoints:
 
     GET   /                           - Lists all available endpoints
-    GET   /questions                  – Lists all test questions (statements) and keys for their interpretation
-    GET   /users                      – Lists all users, their MBTI and individual answers
-    GET   /users/findOne?[id, email]  – Finds a user by their id or email
-    POST  /users                      – Creates a new user with the email and answers provided in the request body
+    GET   /questions                  – Lists all test questions (/statements)
+    GET   /users                      – Lists all users
+    GET   /users/findOne?{id}{email}  – Finds a user by their id or email
+    POST  /users                      – Creates a new (or updates an existing) user with the email provided in the request body
 
 
 #### Frameworks and libraries
